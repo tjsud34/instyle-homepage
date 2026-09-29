@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INSTYLE — Beyond Clothing | 의류 OEM/ODM 생산</title>
+<meta name="description" content="자체 브랜드를 위한 의류 OEM/ODM 생산 파트너, INSTYLE. 기획부터 샘플, 양산, 납품까지.">
+<link rel="icon" href="./brand_logo/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Slab:wght@500;700&family=Yellowtail&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: { cobalt:'#1F4E9C', cobaltdark:'#173B78', navy:'#14284B', mustard:'#F2B31C', cream:'#F3EDDF', kraft:'#B98F5E', kraftdark:'#8E6A3F', brick:'#D8322A' },
+    fontFamily: { cond:['Oswald','"Noto Sans KR"','sans-serif'], slab:['"Roboto Slab"','"Noto Sans KR"','serif'], script:['Yellowtail','cursive'], sans:['"Noto Sans KR"','system-ui','sans-serif'] }
+  } }
+}
+</script>
+<style>
+  html { scroll-behavior:smooth; }
+  body { background:#F3EDDF; color:#14284B; font-family:'Noto Sans KR',sans-serif; -webkit-font-smoothing:antialiased; }
+  ::selection { background:#F2B31C; color:#14284B; }
+
+  /* 버튼 (transform / opacity 만 전환) */
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.95rem 2rem; font-family:'Oswald','Noto Sans KR',sans-serif; font-weight:600; font-size:1rem; letter-spacing:.06em; border:2px solid transparent; cursor:pointer; transition:transform .2s ease, opacity .2s ease; }
+  .btn-yellow { background:#F2B31C; color:#14284B; box-shadow:0 2px 0 #B8830A, 0 10px 20px -6px rgba(20,40,75,.45), 0 22px 40px -16px rgba(242,179,28,.5); }
+  .btn-yellow:hover { transform:scale(1.03); }
+  .btn-yellow:focus-visible { outline:3px solid #F3EDDF; outline-offset:3px; }
+  .btn-yellow:active { transform:scale(.97); }
+  .btn-yellow:disabled { opacity:.5; cursor:not-allowed; transform:none; }
+  .btn-navy { background:#14284B; color:#F3EDDF; box-shadow:0 2px 0 #0A1730, 0 10px 20px -6px rgba(20,40,75,.5); }
+  .btn-navy:hover { transform:scale(1.03); }
+  .btn-navy:focus-visible { outline:3px solid #F2B31C; outline-offset:3px; }
+  .btn-navy:active { transform:scale(.97); }
+  .btn-navy:disabled { opacity:.5; cursor:not-allowed; transform:none; }
+  .btn-line { background:transparent; color:#F3EDDF; border-color:#F3EDDF; }
+  .btn-line:hover { transform:scale(1.03); background:rgba(243,237,223,.12); }
+  .btn-line:focus-visible { outline:3px solid #F2B31C; outline-offset:3px; }
+  .btn-line:active { transform:scale(.97); }
+  .btn-line-dark { background:transparent; color:#14284B; border-color:#14284B; }
+  .btn-line-dark:hover { transform:scale(1.03); background:rgba(20,40,75,.08); }
+  .btn-line-dark:focus-visible { outline:3px solid #1F4E9C; outline-offset:3px; }
+  .btn-line-dark:active { transform:scale(.97); }
+  .btn-line-dark:disabled { opacity:.5; cursor:not-allowed; transform:none; }
+
+  .navlink { font-family:'Oswald','Noto Sans KR',sans-serif; font-weight:500; letter-spacing:.08em; font-size:.95rem; color:#14284B; opacity:.8; transition:opacity .2s ease; }
+  .navlink:hover, .navlink:focus-visible { opacity:1; outline:none; text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:8px; text-decoration-color:#F2B31C; }
+
+  .logo-on-cream { mix-blend-mode:multiply; }
+  .logo-on-blue { filter:invert(1); mix-blend-mode:screen; }
+
+  /* 타이포 */
+  .display { font-family:'Oswald','Noto Sans KR',sans-serif; font-weight:700; text-transform:uppercase; line-height:.95; letter-spacing:.005em; }
+  .script { font-family:'Yellowtail',cursive; }
+  .kicker { font-family:'Oswald',sans-serif; letter-spacing:.2em; font-size:.85rem; font-weight:500; text-transform:uppercase; }
+
+  /* 폴리백 헤더 카드 */
+  .pkg-head { position:relative; background:#F7F3EA; color:#1F4E9C; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:.9rem; padding:1.1rem 1.2rem .8rem; box-shadow:0 1px 0 rgba(0,0,0,.05), 0 8px 18px -8px rgba(0,0,0,.35); }
+  .pkg-head::before { content:''; position:absolute; top:.45rem; left:50%; width:.55rem; height:.55rem; border-radius:50%; background:rgba(20,40,75,.35); transform:translateX(-50%); }
+  .pkg-head .nm { font-family:'Oswald',sans-serif; font-weight:700; font-size:1.55rem; letter-spacing:.03em; text-align:center; line-height:1; }
+  .pkg-head .sub { font-family:'Roboto Slab',serif; font-weight:700; color:#D8322A; font-size:.55rem; letter-spacing:.06em; text-align:center; margin-top:.3rem; text-transform:uppercase; }
+  .pkg-head .side { font-family:'Roboto Slab',serif; font-weight:700; font-size:.5rem; line-height:1.4; text-align:right; text-transform:uppercase; }
+  .pkg-head .badge { font-family:'Oswald',sans-serif; font-size:.6rem; line-height:1.15; text-align:center; border:1.5px solid #1F4E9C; padding:.35rem .5rem; font-weight:600; }
+
+  .polybag { position:relative; padding:0 1.4rem 1.6rem; background:linear-gradient(135deg, rgba(255,255,255,.22), rgba(255,255,255,.06) 40%, rgba(255,255,255,.18)); border:1px solid rgba(255,255,255,.35); box-shadow:0 30px 60px -20px rgba(6,20,50,.6); }
+  .polybag::after { content:''; position:absolute; inset:0; background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.22) 42%, transparent 52%); pointer-events:none; }
+
+  /* 행택 */
+  .tag { position:relative; background:#F3EDDF; color:#1F4E9C; padding:2.6rem 1.5rem 1.6rem; box-shadow:0 1px 0 rgba(0,0,0,.05), 0 14px 28px -12px rgba(20,40,75,.5); }
+  .tag::before { content:''; position:absolute; top:.9rem; left:50%; width:.9rem; height:.9rem; border-radius:50%; background:#1F4E9C; opacity:.85; transform:translateX(-50%); box-shadow:inset 0 0 0 3px #F3EDDF; }
+  .tag .nm { font-family:'Oswald',sans-serif; font-weight:700; font-size:2.6rem; line-height:.95; text-transform:uppercase; }
+  .tag .hw { font-family:'Yellowtail',cursive; color:#D8322A; font-size:1.7rem; margin-top:.6rem; transform:rotate(-4deg); display:inline-block; }
+  .tag .rule { border-top:2px solid #1F4E9C; margin:1.1rem 0 .8rem; }
+  .tag .small { font-family:'Roboto Slab',serif; font-weight:500; font-size:.72rem; letter-spacing:.03em; }
+
+  /* 테이프 띠 */
+  .tape { background:#1F4E9C; color:#F3EDDF; overflow:hidden; transform:rotate(-1.5deg); margin:-1.2rem -2rem; position:relative; z-index:2; box-shadow:0 12px 24px -10px rgba(20,40,75,.6); }
+  .tape-track { display:flex; width:max-content; animation:slide 28s linear infinite; }
+  .tape-track span { font-family:'Oswald',sans-serif; font-weight:700; letter-spacing:.06em; font-size:1.7rem; padding:1rem 1.6rem; white-space:nowrap; }
+  .tape-track span.p { font-size:1.2rem; opacity:.75; }
+  @keyframes slide { to { transform:translateX(-50%); } }
+
+  /* 박스 */
+  .kbox { position:relative; background:linear-gradient(180deg,#C29A68,#B48A58); color:#1F4E9C; box-shadow:0 20px 40px -18px rgba(20,40,75,.6), inset 0 0 0 1px rgba(0,0,0,.06); }
+  .kbox::before { content:''; position:absolute; left:0; right:0; top:0; height:1.6rem; background:#1F4E9C; opacity:.95; }
+  .kbox .addr { font-family:'Roboto Slab',serif; font-weight:700; font-size:.8rem; letter-spacing:.02em; }
+  .kbox .big { font-family:'Oswald',sans-serif; font-weight:700; font-size:2.3rem; line-height:1; text-transform:uppercase; }
+
+  .card-cream { background:#F3EDDF; box-shadow:0 2px 0 rgba(20,40,75,.15), 0 18px 30px -16px rgba(20,40,75,.55); transition:transform .3s ease; }
+  .card-cream:hover { transform:translateY(-6px) rotate(-.4deg); }
+
+  .field { width:100%; background:#fff; border:2px solid #14284B; padding:.8rem 1rem; font-size:.95rem; color:#14284B; border-radius:0; }
+  .field::placeholder { color:#8A93A5; }
+  .field:hover { border-color:#1F4E9C; }
+  .field:focus { outline:3px solid #F2B31C; outline-offset:1px; border-color:#1F4E9C; }
+  .field:disabled { opacity:.5; cursor:not-allowed; }
+  label.lbl { display:block; font-family:'Oswald','Noto Sans KR',sans-serif; letter-spacing:.05em; font-weight:500; font-size:.9rem; margin-bottom:.4rem; }
+
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } html { scroll-behavior:auto; } .tape-track { animation:none; } }
+</style>
+</head>
+<body>
+
+<!-- 제품 실루엣 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tee" viewBox="0 0 200 200"><path d="M72 18 L18 46 L36 88 L58 77 L58 184 L142 184 L142 77 L164 88 L182 46 L128 18 C122 38 78 38 72 18 Z" fill="currentColor"/><path d="M72 18 C78 38 122 38 128 18" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="5"/></symbol>
+    <symbol id="cap" viewBox="0 0 200 200"><path d="M34 128 C30 52 170 52 166 128 Z" fill="currentColor"/><path d="M22 130 L178 130 Q196 152 100 160 Q4 152 22 130 Z" fill="currentColor" opacity=".85"/><circle cx="100" cy="66" r="6" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<!-- Header -->
+<header class="fixed top-0 inset-x-0 z-50 bg-cream/95 backdrop-blur border-b-2 border-navy">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" aria-label="INSTYLE 홈"><img src="./brand_logo/logo2.png" alt="INSTYLE Beyond Clothing" class="h-9 w-auto logo-on-cream"></a>
+    <nav class="hidden md:flex items-center gap-9" aria-label="주요 메뉴">
+      <a href="#about" class="navlink">ABOUT</a>
+      <a href="#services" class="navlink">SERVICE</a>
+      <a href="#items" class="navlink">ITEMS</a>
+      <a href="#process" class="navlink">PROCESS</a>
+      <a href="#contact" class="btn btn-navy !py-2 !px-5 !text-sm">CONTACT</a>
+    </nav>
+    <a href="#contact" class="md:hidden btn btn-navy !py-2 !px-4 !text-sm">CONTACT</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="bg-cobalt text-cream pt-28 pb-32 md:pt-36 md:pb-40 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-12 items-center">
+    <div class="md:col-span-7">
+      <p class="kicker text-mustard reveal">Apparel OEM · ODM Partner</p>
+      <h1 class="display text-[3.6rem] sm:text-7xl md:text-[6.4rem] mt-5 reveal">Your brand,<br>made real.</h1>
+      <p class="script text-5xl md:text-6xl text-mustard mt-3 -rotate-3 inline-block reveal">Beyond Clothing</p>
+      <p class="mt-8 max-w-lg text-cream/85 leading-relaxed text-[1.02rem] reveal">
+        자체 브랜드를 만들고 싶은 업체를 위한 의류 OEM/ODM 생산 파트너, INSTYLE.<br class="hidden md:block">
+        기획, 샘플, 양산, 납품까지 하나의 흐름으로 연결합니다.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4 reveal">
+        <a href="#contact" class="btn btn-yellow">생산 상담 신청</a>
+        <a href="#services" class="btn btn-line">서비스 보기</a>
+      </div>
+    </div>
+
+    <!-- 폴리백 목업 -->
+    <div class="md:col-span-5 reveal">
+      <div class="max-w-sm mx-auto rotate-2">
+        <div class="pkg-head">
+          <div class="badge">EST.<br>INSTYLE</div>
+          <div><div class="nm">INSTYLE</div><div class="sub">Beyond Clothing</div></div>
+          <div class="side">OEM · ODM<br>Apparel<br><b style="font-family:Oswald">100%</b> Made<br>For Brands</div>
+        </div>
+        <div class="polybag">
+          <div class="relative pt-6 text-stone-300" style="color:#C9CCD0">
+            <p class="script text-white text-4xl text-center absolute inset-x-0 top-10 z-10">Made your way</p>
+            <svg viewBox="0 0 200 200" class="w-full h-auto"><use href="#tee"/></svg>
+            <div class="absolute inset-x-0 top-[52%] text-center z-10">
+              <p class="display text-white text-4xl">INSTYLE</p>
+              <p class="display text-cobalt text-xl mt-1" style="color:#1F4E9C">Beyond Clothing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 테이프 띠 -->
+<div class="relative z-10 -mt-8 mb-0 overflow-hidden py-6" aria-hidden="true">
+  <div class="tape">
+    <div class="tape-track">
+      <span>INSTYLE</span><span class="p">I.S</span><span>OEM</span><span class="p">I.S</span><span>ODM</span><span class="p">I.S</span><span>BEYOND CLOTHING</span><span class="p">I.S</span>
+      <span>INSTYLE</span><span class="p">I.S</span><span>OEM</span><span class="p">I.S</span><span>ODM</span><span class="p">I.S</span><span>BEYOND CLOTHING</span><span class="p">I.S</span>
+      <span>INSTYLE</span><span class="p">I.S</span><span>OEM</span><span class="p">I.S</span><span>ODM</span><span class="p">I.S</span><span>BEYOND CLOTHING</span><span class="p">I.S</span>
+      <span>INSTYLE</span><span class="p">I.S</span><span>OEM</span><span class="p">I.S</span><span>ODM</span><span class="p">I.S</span><span>BEYOND CLOTHING</span><span class="p">I.S</span>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<section id="about" class="bg-cream py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-14 items-center">
+    <div class="md:col-span-6 reveal order-2 md:order-1">
+      <div class="relative h-[26rem] max-w-md mx-auto">
+        <div class="tag absolute left-0 top-6 w-56 -rotate-6">
+          <p class="nm">In<br>Style</p>
+          <p class="hw">Beyond Clothing!</p>
+          <div class="rule"></div>
+          <p class="small">Brand to Garment,<br>From Idea to Delivery</p>
+        </div>
+        <div class="tag absolute right-0 top-0 w-56 rotate-3" style="background:#F7F3EA">
+          <p class="nm">In<br>Style</p>
+          <p class="hw">Made your way!</p>
+          <div class="rule"></div>
+          <p class="small">OEM / ODM<br>Apparel Production</p>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-6 order-1 md:order-2 reveal">
+      <p class="kicker text-cobalt">About INSTYLE</p>
+      <h2 class="display text-5xl md:text-6xl mt-4 text-cobalt">브랜드의 생각을<br>정확하게 옮깁니다</h2>
+      <div class="mt-8 space-y-5 text-navy/80 leading-[1.9]">
+        <p>좋은 브랜드에는 좋은 생산 파트너가 필요합니다. INSTYLE은 브랜드가 그리는 디자인과 콘셉트를 이해하고, 현실적인 품질과 일정, 단가로 구현하는 데 집중합니다.</p>
+        <p>이제 막 브랜드를 시작하는 업체부터 라인을 확장하려는 업체까지, 각자의 단계에 맞는 방식으로 함께합니다.</p>
+      </div>
+      <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+        <div class="border-2 border-navy py-4"><p class="display text-2xl text-cobalt">Quality</p><p class="text-xs mt-1">꼼꼼한 검수</p></div>
+        <div class="border-2 border-navy py-4"><p class="display text-2xl text-cobalt">Clarity</p><p class="text-xs mt-1">투명한 소통</p></div>
+        <div class="border-2 border-navy py-4"><p class="display text-2xl text-cobalt">Delivery</p><p class="text-xs mt-1">약속한 납기</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="bg-mustard py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="reveal">
+      <p class="kicker text-navy">Service</p>
+      <h2 class="display text-5xl md:text-7xl mt-4 text-navy">Two ways<br>to start.</h2>
+    </div>
+    <div class="mt-14 grid md:grid-cols-2 gap-8">
+      <article class="card-cream reveal">
+        <div class="pkg-head !shadow-none"><div class="badge">01</div><div><div class="nm">OEM</div><div class="sub">주문자 상표 부착 생산</div></div><div class="side">Your design<br>Our production</div></div>
+        <div class="p-8">
+          <p class="text-navy/80 leading-[1.85]">작업지시서와 패턴 등 디자인이 준비된 브랜드를 위한 방식입니다. 제시된 사양 그대로 정확하게 생산합니다.</p>
+          <ul class="mt-6 space-y-2 text-sm font-medium">
+            <li class="flex gap-3"><span class="text-brick">■</span>작업지시서 기반 샘플 제작</li>
+            <li class="flex gap-3"><span class="text-brick">■</span>원부자재 소싱 및 관리</li>
+            <li class="flex gap-3"><span class="text-brick">■</span>양산 및 공정별 품질 검수</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card-cream reveal">
+        <div class="pkg-head !shadow-none"><div class="badge">02</div><div><div class="nm">ODM</div><div class="sub">제조사 개발 생산</div></div><div class="side">Your idea<br>Our development</div></div>
+        <div class="p-8">
+          <p class="text-navy/80 leading-[1.85]">아이디어와 레퍼런스만 있어도 시작할 수 있습니다. 디자인 개발부터 생산까지 함께 진행합니다.</p>
+          <ul class="mt-6 space-y-2 text-sm font-medium">
+            <li class="flex gap-3"><span class="text-brick">■</span>레퍼런스 기반 디자인·패턴 개발</li>
+            <li class="flex gap-3"><span class="text-brick">■</span>소재 및 핏 제안</li>
+            <li class="flex gap-3"><span class="text-brick">■</span>샘플 수정부터 양산까지 원스톱</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Items -->
+<section id="items" class="bg-navy text-cream py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="reveal md:flex md:items-end md:justify-between gap-8">
+      <div>
+        <p class="kicker text-mustard">Items</p>
+        <h2 class="display text-5xl md:text-7xl mt-4">Every piece,<br>your label.</h2>
+      </div>
+      <p class="text-cream/70 max-w-xs mt-6 md:mt-0 text-sm leading-relaxed">티셔츠, 캡 등 브랜드가 원하는 품목과 컬러로 제작합니다. 자세한 품목은 상담 시 협의합니다.</p>
+    </div>
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="reveal"><div class="pkg-head !p-2 !gap-1 !grid-cols-1"><div class="nm !text-sm">INSTYLE</div></div><div class="bg-white/10 p-4" style="color:#C9CCD0"><svg viewBox="0 0 200 200" class="w-full"><use href="#tee"/></svg></div><p class="kicker text-center mt-2">T-Shirt</p></div>
+      <div class="reveal"><div class="pkg-head !p-2 !gap-1 !grid-cols-1"><div class="nm !text-sm">INSTYLE</div></div><div class="bg-white/10 p-4" style="color:#D8322A"><svg viewBox="0 0 200 200" class="w-full"><use href="#tee"/></svg></div><p class="kicker text-center mt-2">T-Shirt</p></div>
+      <div class="reveal"><div class="pkg-head !p-2 !gap-1 !grid-cols-1"><div class="nm !text-sm">INSTYLE</div></div><div class="bg-white/10 p-4" style="color:#2E62C0"><svg viewBox="0 0 200 200" class="w-full"><use href="#cap"/></svg></div><p class="kicker text-center mt-2">Cap</p></div>
+      <div class="reveal"><div class="pkg-head !p-2 !gap-1 !grid-cols-1"><div class="nm !text-sm">INSTYLE</div></div><div class="bg-white/10 p-4" style="color:#F2B31C"><svg viewBox="0 0 200 200" class="w-full"><use href="#tee"/></svg></div><p class="kicker text-center mt-2">T-Shirt</p></div>
+      <div class="reveal col-span-2 md:col-span-1"><div class="pkg-head !p-2 !gap-1 !grid-cols-1"><div class="nm !text-sm">INSTYLE</div></div><div class="bg-white/10 p-4 max-w-[10rem] md:max-w-none mx-auto" style="color:#7A1F2B"><svg viewBox="0 0 200 200" class="w-full"><use href="#cap"/></svg></div><p class="kicker text-center mt-2">Cap</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="bg-kraft py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="reveal">
+      <p class="kicker text-navy">Process</p>
+      <h2 class="display text-5xl md:text-7xl mt-4 text-cobalt">From idea<br>to delivery.</h2>
+    </div>
+    <ol class="mt-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+      <li class="kbox reveal p-5 pt-10"><p class="big">01</p><h3 class="font-bold mt-3">상담 및 견적</h3><p class="addr mt-2 !font-medium text-navy/80 leading-relaxed">품목, 수량, 일정, 예산을 듣고 방향과 견적을 안내합니다.</p></li>
+      <li class="kbox reveal p-5 pt-10"><p class="big">02</p><h3 class="font-bold mt-3">디자인·패턴 확정</h3><p class="addr mt-2 !font-medium text-navy/80 leading-relaxed">작업지시서 또는 레퍼런스로 디자인, 소재, 핏을 확정합니다.</p></li>
+      <li class="kbox reveal p-5 pt-10"><p class="big">03</p><h3 class="font-bold mt-3">샘플 제작</h3><p class="addr mt-2 !font-medium text-navy/80 leading-relaxed">샘플을 제작하고 피드백을 반영해 수정합니다.</p></li>
+      <li class="kbox reveal p-5 pt-10"><p class="big">04</p><h3 class="font-bold mt-3">양산 및 검수</h3><p class="addr mt-2 !font-medium text-navy/80 leading-relaxed">확정된 샘플 기준으로 양산하며 공정별로 검수합니다.</p></li>
+      <li class="kbox reveal p-5 pt-10 sm:col-span-2 lg:col-span-1"><p class="big">05</p><h3 class="font-bold mt-3">납품</h3><p class="addr mt-2 !font-medium text-navy/80 leading-relaxed">포장과 출고까지 확인해 약속한 일정에 전달합니다.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-cobalt text-cream py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5 reveal">
+      <p class="kicker text-mustard">Contact</p>
+      <h2 class="display text-5xl md:text-7xl mt-4">Let's make<br>it yours.</h2>
+      <p class="script text-4xl text-mustard mt-3 -rotate-2 inline-block">Howdy, brands!</p>
+      <p class="mt-6 text-cream/80 leading-relaxed text-[.95rem]">브랜드와 만들고 싶은 옷에 대해 알려주세요. 확인 후 영업일 기준 1~2일 내에 연락드립니다.</p>
+      <p class="mt-8 text-sm text-cream/70">이메일 문의</p>
+      <a href="mailto:sales@eawesplus.com" class="font-slab font-bold text-lg underline underline-offset-4 decoration-mustard decoration-2 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard">sales@eawesplus.com</a>
+    </div>
+
+    <div class="md:col-span-7 reveal">
+      <form id="consultation-form" class="bg-cream text-navy p-6 md:p-10 shadow-[0_24px_50px_-20px_rgba(6,20,50,.7)]" novalidate>
+        <div class="flex items-center justify-between mb-8">
+          <p class="font-cond font-semibold tracking-wide" id="step-label">1 / 2 · 기본 정보</p>
+          <div class="flex gap-2" aria-hidden="true">
+            <span id="dot1" class="h-1.5 w-10 bg-cobalt"></span>
+            <span id="dot2" class="h-1.5 w-10 bg-navy/20"></span>
+          </div>
+        </div>
+
+        <div class="form-step space-y-5" data-step="1">
+          <div><label class="lbl" for="f-name">이름 / 담당자명 *</label><input class="field" id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div><label class="lbl" for="f-company">회사 / 브랜드명</label><input class="field" id="f-company" name="company" type="text" autocomplete="organization"></div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div><label class="lbl" for="f-phone">연락처 *</label><input class="field" id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000" required></div>
+            <div><label class="lbl" for="f-email">이메일 *</label><input class="field" id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <p id="err1" class="text-sm text-brick font-medium hidden" role="alert"></p>
+          <div class="pt-2"><button type="button" id="next" class="btn btn-navy">NEXT</button></div>
+        </div>
+
+        <div class="form-step space-y-5 hidden" data-step="2">
+          <div>
+            <label class="lbl" for="f-type">생산 방식</label>
+            <select class="field" id="f-type" name="production_type">
+              <option value="">선택해주세요</option>
+              <option>OEM (디자인·작업지시서 보유)</option>
+              <option>ODM (디자인 개발 필요)</option>
+              <option>아직 모르겠어요</option>
+            </select>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div><label class="lbl" for="f-item">생산하려는 품목</label><input class="field" id="f-item" name="item" type="text" placeholder="예: 티셔츠, 캡"></div>
+            <div><label class="lbl" for="f-qty">예상 수량</label><input class="field" id="f-qty" name="quantity" type="text" placeholder="예: 스타일당 300장"></div>
+          </div>
+          <div><label class="lbl" for="f-schedule">희망 일정</label><input class="field" id="f-schedule" name="schedule" type="text" placeholder="예: 3개월 내 출시"></div>
+          <div><label class="lbl" for="f-message">문의 내용</label><textarea class="field" id="f-message" name="message" rows="4" placeholder="브랜드 콘셉트, 레퍼런스, 궁금한 점을 자유롭게 적어주세요."></textarea></div>
+          <label class="flex items-start gap-3 text-sm text-navy/80">
+            <input type="checkbox" id="f-agree" class="mt-1 accent-[#1F4E9C]" required>
+            <span>상담을 위한 개인정보(이름, 연락처, 이메일) 수집·이용에 동의합니다. *</span>
+          </label>
+          <p id="err2" class="text-sm text-brick font-medium hidden" role="alert"></p>
+          <div class="pt-2 flex gap-3">
+            <button type="button" id="prev" class="btn btn-line-dark">BACK</button>
+            <button type="submit" id="submit" class="btn btn-navy">상담 신청하기</button>
+          </div>
+        </div>
+
+        <div id="done" class="hidden text-center py-10" role="status">
+          <p class="script text-6xl text-brick">Thank you!</p>
+          <p class="display text-3xl mt-4 text-cobalt">접수 완료</p>
+          <p class="text-navy/70 mt-3 text-[.95rem]">영업일 기준 1~2일 내에 연락드리겠습니다.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-navy text-cream/70">
+  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row gap-5 md:items-center md:justify-between text-sm">
+    <img src="./brand_logo/logo2.png" alt="INSTYLE Beyond Clothing" class="h-8 w-auto logo-on-blue self-start">
+    <p>sales@eawesplus.com</p>
+    <p>© <span id="year"></span> INSTYLE. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="./config.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const form = document.getElementById('consultation-form');
+  const steps = [...form.querySelectorAll('.form-step')];
+  const label = document.getElementById('step-label');
+  const dots = [document.getElementById('dot1'), document.getElementById('dot2')];
+  const names = ['1 / 2 · 기본 정보', '2 / 2 · 생산 문의'];
+
+  function show(n) {
+    steps.forEach(s => s.classList.toggle('hidden', +s.dataset.step !== n));
+    label.textContent = names[n - 1];
+    dots[0].className = 'h-1.5 w-10 bg-cobalt';
+    dots[1].className = 'h-1.5 w-10 ' + (n === 2 ? 'bg-cobalt' : 'bg-navy/20');
+  }
+  const err = (id, msg) => { const e = document.getElementById(id); e.textContent = msg; e.classList.toggle('hidden', !msg); };
+
+  document.getElementById('next').addEventListener('click', () => {
+    const name = form.name.value.trim(), phone = form.phone.value.trim(), email = form.email.value.trim();
+    if (!name || !phone || !email) return err('err1', '이름, 연락처, 이메일을 입력해주세요.');
+    if (!/^\S+@\S+\.\S+$/.test(email)) return err('err1', '이메일 형식을 확인해주세요.');
+    err('err1', ''); show(2);
+  });
+  document.getElementById('prev').addEventListener('click', () => show(1));
+
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    if (!document.getElementById('f-agree').checked) return err('err2', '개인정보 수집·이용에 동의해주세요.');
+    err('err2', '');
+    const btn = document.getElementById('submit');
+    btn.disabled = true; btn.textContent = '전송 중...';
+
+    const fd = new FormData(form);
+    const extra = [
+      ['회사/브랜드', fd.get('company')], ['생산 방식', fd.get('production_type')],
+      ['품목', fd.get('item')], ['예상 수량', fd.get('quantity')], ['희망 일정', fd.get('schedule')]
+    ].filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n');
+    const payload = {
+      name: fd.get('name').trim(), email: fd.get('email').trim(), phone: fd.get('phone').trim(),
+      situation: extra, goal: fd.get('schedule') || '', message: (fd.get('message') || '').trim()
+    };
+
+    const { SUPABASE_URL, SUPABASE_ANON_KEY } = window.SITE_CONFIG || {};
+    try {
+      if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+        const headers = { 'Content-Type': 'application/json', apikey: SUPABASE_ANON_KEY, Prefer: 'return=minimal' };
+        // 기존 JWT 형식(anon key)일 때만 Authorization 헤더 사용. sb_publishable_ 키는 apikey 헤더만 사용
+        if (SUPABASE_ANON_KEY.startsWith('eyJ')) headers.Authorization = `Bearer ${SUPABASE_ANON_KEY}`;
+        const r = await fetch(`${SUPABASE_URL}/rest/v1/consultations`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify(payload)
+        });
+        if (!r.ok) throw new Error('save failed');
+      } else {
+        console.info('[미리보기] Supabase 미설정 — 전송 데이터:', payload);
+      }
+      steps.forEach(s => s.classList.add('hidden'));
+      document.getElementById('done').classList.remove('hidden');
+      label.textContent = '접수 완료';
+    } catch (e) {
+      err('err2', '전송에 실패했습니다. 잠시 후 다시 시도하거나 sales@eawesplus.com 으로 문의해주세요.');
+      btn.disabled = false; btn.textContent = '상담 신청하기';
+    }
+  });
+</script>
+</body>
+</html>
